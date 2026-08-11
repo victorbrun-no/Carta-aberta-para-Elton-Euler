@@ -47,6 +47,23 @@
 
   sections.forEach((section) => chapterObserver.observe(section));
 
+  const heroSection = document.querySelector('.hero');
+  const desktopRail = document.querySelector('.desktop-rail');
+
+  if (heroSection && desktopRail) {
+    const railVisibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          desktopRail.classList.add('is-visible');
+        } else {
+          desktopRail.classList.remove('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    railVisibilityObserver.observe(heroSection);
+  }
+
   const notify = (message) => {
     if (!toast) return;
     toast.textContent = message;

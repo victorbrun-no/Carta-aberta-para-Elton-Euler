@@ -108,7 +108,10 @@ mark { color: inherit; background: linear-gradient(transparent 58%, rgba(174,135
   position: fixed;
   left: 2rem;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-20px);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
   z-index: 850;
   display: flex;
   flex-direction: column;
@@ -121,7 +124,14 @@ mark { color: inherit; background: linear-gradient(transparent 58%, rgba(174,135
   border-radius: 8px;
   box-shadow: 0 12px 40px rgba(27, 25, 21, 0.08);
   max-width: 260px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
+}
+
+.desktop-rail.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
 }
 
 .rail-header {
