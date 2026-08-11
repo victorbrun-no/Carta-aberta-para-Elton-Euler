@@ -21,7 +21,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--ink); }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; background: var(--ink); }
 body { margin: 0; color: var(--ink); font-family: var(--body); background: var(--paper); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -644,9 +644,28 @@ mark { color: inherit; background: linear-gradient(transparent 58%, rgba(174,135
   text-transform: uppercase;
 }
 .table-note ul { margin: 0; padding: 0 0 0 1.2rem; }
-.table-note li { margin: 0 0 .85rem; padding-left: .35rem; font-size: 1rem; line-height: 1.55; }
 
-.presentation-trigger { color: #f1c982; }
+.presentation-icon-trigger {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #f1c982;
+  opacity: 0.6;
+  padding: .45rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
+}
+.presentation-icon-trigger:hover,
+.presentation-icon-trigger:focus-visible {
+  opacity: 1;
+  background: rgba(255, 255, 255, .1);
+  transform: scale(1.08);
+  outline: 0;
+}
 
 /* Presentation deck */
 body.presentation-open { overflow: hidden; }
@@ -835,7 +854,6 @@ body.presentation-open { overflow: hidden; }
   line-height: 1.45;
   box-shadow: 0 12px 40px rgba(0,0,0,.35);
 }
-.orientation-hint strong { display: block; color: #e9c17c; }
 .orientation-hint span { color: #9d978c; }
 
 @media (max-width: 1120px) {
@@ -850,14 +868,76 @@ body.presentation-open { overflow: hidden; }
   .ambient-question { width: 55vw; right: -24vw; opacity: .05; }
   .table-note { margin-inline: 0; padding-inline: 1.3rem; }
   .presentation-shell { grid-template-rows: 44px 1fr 52px; }
-  .presentation-stage { width: min(100vw, calc((100dvh - 96px) * 16 / 9)); height: min(calc(100dvh - 96px), calc(100vw * 9 / 16)); }
   .presentation-bar { padding-inline: .65rem; }
   .presentation-bar > div:first-child span { display: none; }
   .presentation-actions button { padding-inline: .45rem; font-size: .55rem; }
+  .presentation-controls button { width: 40px; height: 38px; }
 }
 
 @media (max-width: 820px) and (orientation: portrait) {
-  .presentation.is-open .orientation-hint { display: block; }
+  .presentation-shell { grid-template-rows: 48px 1fr 58px; }
+  .presentation-stage {
+    width: 94vw;
+    height: calc(100dvh - 114px);
+    aspect-ratio: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 12px 40px rgba(0,0,0,.6);
+  }
+  .orientation-hint { display: none !important; }
+  .deck-slide {
+    padding: 1.4rem 1.1rem 1.6rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .deck-slide.active { display: flex; }
+  .deck-slide > h2:not(.slide-title-compact) { font-size: clamp(2rem, 8.5vw, 3.2rem); margin-top: 1rem; }
+  .slide-title-compact { font-size: clamp(1.5rem, 6.2vw, 2.4rem); margin-top: 0.8rem; }
+  .slide-hand { font-size: clamp(1.4rem, 5.5vw, 2.2rem); margin: 0.8rem 0; transform: none; }
+  .slide-hand.small { font-size: clamp(1.2rem, 4.5vw, 1.8rem); }
+  .slide-hand.corner,
+  .slide-hand.bottom-right,
+  .slide-hand.question-bottom,
+  .slide-hand.corner-right,
+  .slide-hand.bottom-left,
+  .final-hand-slide {
+    position: static;
+    transform: none;
+    text-align: left;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .slide-letter { width: 100%; margin-top: 0.8rem; }
+  .slide-letter p { font-size: 0.88rem; line-height: 1.45; margin-bottom: 0.6rem; }
+  .slide-letter .slide-salutation { font-size: 1.8rem; margin-bottom: 0.6rem; }
+  .slide-letter .slide-small { font-size: 0.78rem; margin-top: 0.6rem; }
+  .slide-toc { width: 100%; margin-top: 0.8rem; }
+  .slide-toc li { grid-template-columns: 34px 1fr; gap: 0.4rem; padding: 0.35rem 0; }
+  .slide-toc small { grid-column: 2; font-size: 0.72rem; }
+  .slide-layers { grid-template-columns: 1fr; width: 100%; margin-top: 0.8rem; gap: 0.4rem; }
+  .slide-layers div { min-height: auto; padding: 0.75rem; }
+  .slide-layers div + div { margin-left: 0; }
+  .slide-layers strong { margin-top: 0.3rem; font-size: 1.15rem; }
+  .slide-layers .accent { transform: none; }
+  .slide-flow { grid-template-columns: repeat(2, 1fr); gap: 0.4rem; font-size: 0.7rem; margin-top: 0.8rem; }
+  .slide-flow span { text-align: center; }
+  .slide-nodes { width: 100%; gap: 0.35rem; margin-top: 0.8rem; }
+  .slide-nodes span { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
+  .slide-prefall { grid-template-columns: 1fr; gap: 0.6rem; margin-top: 0.6rem; }
+  .slide-prefall img { display: none; }
+  .slide-equation { flex-wrap: wrap; gap: 0.35rem; font-size: 0.95rem; margin-top: 0.8rem; padding: 0.6rem 0; }
+  .slide-big-question { width: 100%; font-size: 1.15rem; margin-top: 0.8rem; }
+  .slide-small.statement { width: 100%; margin-top: 0.8rem; }
+  .slide-small.light-copy { position: static; max-width: 100%; margin-top: 0.8rem; }
+  .final-slide-title { margin-top: 1rem !important; font-size: 2rem !important; }
+  .final-copy { width: 100%; margin-top: 0.8rem; }
+  .slide-note { position: static; transform: none; margin-top: 0.8rem; font-size: 1.4rem; }
+  .slide-caption { position: static; margin-top: 1rem; }
+  .slide-orbit, .slide-cave-art, .slide-lab, .slide-bloom { opacity: 0.08; }
+  .presentation-controls { padding: 0 0.8rem; }
+  .presentation-controls button { width: 42px; height: 40px; }
 }
 
 @media (max-height: 620px) and (orientation: landscape) {

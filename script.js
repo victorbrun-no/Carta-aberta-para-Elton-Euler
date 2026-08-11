@@ -220,4 +220,16 @@
   const requestedSlide = Number.parseInt(params.get('slide') || '1', 10) - 1;
   renderSlide(Number.isFinite(requestedSlide) ? requestedSlide : 0);
   if (params.get('present') === '1') openDeck();
+
+  if (window.location.hash) {
+    const hashTarget = document.querySelector(window.location.hash);
+    if (hashTarget) {
+      reveals.forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 1.5) {
+          el.classList.add('is-visible');
+        }
+      });
+      hashTarget.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+    }
+  }
 })();

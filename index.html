@@ -44,9 +44,14 @@
   <header class="topbar" aria-label="Ações da carta">
     <a class="brand-mark" href="#top" aria-label="Voltar ao início">VB<span>/</span>EE</a>
     <div class="topbar-actions">
-      <button class="text-action presentation-trigger" id="openPresentation" type="button" aria-haspopup="dialog">Modo apresentação</button>
-      <button class="text-action" id="copyLink" type="button">Copiar link</button>
-      <button class="text-action" id="printLetter" type="button">Salvar em PDF</button>
+      <button class="presentation-icon-trigger" id="openPresentation" type="button" aria-haspopup="dialog" aria-label="Modo apresentação" title="Modo apresentação">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+          <polygon points="10 8 15 10 10 12 10 8" fill="currentColor" stroke="none"></polygon>
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -242,8 +247,7 @@
         <p>E então veio a pergunta que eu não tenho pretensão nenhuma de responder.</p>
         <p><strong>Eu estava captando uma direção que você já vinha construindo?</strong> Ou eu fiquei tão imerso nos seus conteúdos que comecei a reconhecer naturalmente a arquitetura antes de ela ser anunciada? Minha própria intenção ajudou a organizar aquelas ideias? Eu estava “escutando” a sua frequência ou só aprendendo a pensar com o mesmo conjunto de peças?</p>
         <p>Talvez seja uma coisa. Talvez seja outra. Talvez sejam as duas numa relação de causa e efeito que eu não consigo separar.</p>
-        <p>Eu não sei.</p>
-        <p>Mas sei o que isso significou para mim: <strong>confirmação de alinhamento.</strong></p>
+        <p>Eu não sei... Mas sei o que isso significou para mim: <strong>confirmação de alinhamento.</strong></p>
       </article>
 
       <div class="frequency-panel reveal" aria-label="Diagrama visual de alinhamento de ideias">
@@ -255,20 +259,11 @@
         </div>
       </div>
 
-      <article class="letter-column dark-copy reveal">
-        <p>E aí aconteceu uma segunda coisa ainda mais difícil de ignorar.</p>
-        <p>Você falou que a vida sempre foi o seu laboratório. Falou dos seus antigos parceiros de laboratório e, nessa nova fase, falou sobre <strong>buscar novos parceiros</strong>.</p>
-        <p>Eu parei de novo.</p>
-        <p class="handwritten cavern-hand smaller">“Tá de sacanagem...”</p>
-        <p>Porque, se eu já estava com a sensação de que você tinha feito um convite sem saber que estava fazendo, naquele momento essa sensação ganhou palavras.</p>
-      </article>
 
       <div class="lab-table reveal">
         <img src="assets/lab-table.svg" alt="Desenho de uma mesa com cadeiras e anotações de laboratório" loading="lazy" />
         <p class="handwritten">parceiros de laboratório?</p>
       </div>
-
-      <p class="lab-realization handwritten reveal">Talvez eu não estivesse procurando um módulo.<br />Talvez estivesse procurando um laboratório.</p>
     </section>
 
     <section class="chapter paper-section" id="cap5" data-chapter-section>
@@ -429,12 +424,10 @@
         <p>Seria estranho se concordasse sem me conhecer.</p>
         <p>Eu só gostaria de alguns minutos diante de uma mesa, física ou virtual, para te mostrar o que estou enxergando, onde acredito que consigo contribuir e por que essa sensação de alinhamento ficou tão forte.</p>
         <p>Depois disso, você decide se existe ou não um lugar para mim nessa história.</p>
-        <p>Eu acredito que existe.</p>
-
         <div class="final-rule" aria-hidden="true"></div>
 
-        <p class="final-hand handwritten">Eu quero atravessar.<br />E quero ajudar a construir a ponte.</p>
-        <p class="final-statement">Eu sinto como se eu<br /><strong>devesse estar aí.</strong></p>
+        <p class="final-hand handwritten">Eu quero atravessar.<br />E ajudar a construir a ponte.</p>
+        <p class="final-statement" style="font-size: 100px;">Eu sinto como se eu<br /><strong>devesse estar aí.</strong></p>
 
         <div class="signature-block">
           <p class="signature handwritten">Victor Bruno</p>
@@ -473,14 +466,14 @@
         </article>
 
         <article class="deck-slide deck-paper" data-slide="1">
-          <p class="slide-eyebrow ink">O resto da história</p>
+          <p class="slide-eyebrow ink">01 / O resto da história</p>
           <div class="slide-letter">
             <p class="slide-salutation handwritten">Euler,</p>
-            <p>meu nome é <strong>Victor Bruno</strong>, tenho 28 anos. Sou autodidata, procrastinador e criativo...</p>
+            <p>Meu nome é <strong>Victor Bruno</strong>, tenho 28 anos. Sou autodidata, procrastinador e criativo... membro honorário do grupo <em>“melhor pessoa do mundo em dar desculpas”</em> e, assim como você, um <em>“menino de ouro”</em>.</p>
             <p class="slide-hand small handwritten">E o resto você já sabe...</p>
             <p class="slide-small">Isto começou como uma mensagem curta. Toda vez que eu tentava resumir, eu apagava justamente o que fazia a frase principal ter sentido.</p>
           </div>
-          <aside class="slide-note handwritten" style="opacity: 0.3;">Iniciativa Divergentes?</aside>
+          <aside class="slide-note handwritten" style="opacity: 0.4;">Iniciativa Divergentes?</aside>
         </article>
 
         <article class="deck-slide deck-paper" data-slide="2">
@@ -498,18 +491,18 @@
         </article>
 
         <article class="deck-slide deck-paper" data-slide="3">
-          <p class="slide-eyebrow ink">A Teoria da Permissão</p>
+          <p class="slide-eyebrow ink">02 / A Teoria da Permissão</p>
           <h2 class="slide-title-compact">Eu vejo em<br><em>3 camadas.</em></h2>
           <div class="slide-layers">
-            <div><span>01</span><strong>O que é ensinado.</strong></div>
-            <div><span>02</span><strong>O que conseguimos compreender.</strong></div>
-            <div class="accent"><span>03</span><strong>O que só aparece quando assimilamos tudo.</strong></div>
+            <div><span>01</span><strong>O que é ensinado.</strong><small>Método e ferramentas.</small></div>
+            <div><span>02</span><strong>O que conseguimos compreender.</strong><small>Conexão com a história.</small></div>
+            <div class="accent"><span>03</span><strong>O que só aparece quando assimilamos tudo.</strong><small>Pensar a partir dela.</small></div>
           </div>
-          <p class="slide-hand handwritten corner">E aí começou o problema:<br>eu queria ir mais fundo.</p>
+          <p class="slide-hand handwritten corner">E aí começou a busca:<br>eu queria ir mais fundo.</p>
         </article>
 
         <article class="deck-slide deck-dark" data-slide="4">
-          <p class="slide-eyebrow">Além do manual</p>
+          <p class="slide-eyebrow">03 / Além do manual</p>
           <h2 class="slide-title-compact light">Foi um “Hello, World”<br>mental.</h2>
           <div class="slide-flow">
             <span>consultar</span><b>→</b><span>repetir</span><b>→</b><span>assimilar</span><b>→</b><span class="accent-text">enxergar além</span>
@@ -519,46 +512,46 @@
         </article>
 
         <article class="deck-slide deck-cave" data-slide="5">
-          <img class="slide-cave-art" src="assets/cave.svg" alt="" aria-hidden="true">
-          <p class="slide-eyebrow">A Caverna</p>
+          <img class="slide-cave-art" src="assets/cave.svg" alt="" aria-hidden="true" width="732" height="400">
+          <p class="slide-eyebrow">04 / A Caverna</p>
           <h2>A Caverna.</h2>
           <p class="slide-big-question">Eu estava captando a direção<br>ou as ideias simplesmente se encontraram?</p>
           <p class="slide-hand handwritten bottom-right">“Como assim?<br>É exatamente isso...”</p>
         </article>
 
         <article class="deck-slide deck-cave" data-slide="6">
-          <p class="slide-eyebrow">O Encontro</p>
+          <p class="slide-eyebrow">04 / O Encontro</p>
           <h2 class="slide-title-compact light">Talvez eu não estivesse<br>procurando um módulo.</h2>
-          <img class="slide-lab" src="assets/lab-table.svg" alt="" aria-hidden="true">
+          <img class="slide-lab" src="assets/lab-table.svg" alt="" aria-hidden="true" width="620" height="200">
           <p class="slide-hand handwritten lab-answer">Talvez estivesse procurando<br><strong>um laboratório.</strong></p>
-          <p class="slide-small light-copy">“Eu estou buscando novos parceiros de laboratório...”</p>
+          <p class="slide-small light-copy">“Você falou sobre buscar novos parceiros de laboratório... E a sensação ganhou palavras.”</p>
         </article>
 
         <article class="deck-slide deck-paper" data-slide="7">
-          <p class="slide-eyebrow ink">Pré-queda e perguntas</p>
-          <h2 class="slide-title-compact">As perguntas<br>seguintes.</h2>
+          <p class="slide-eyebrow ink">05 / Pré-queda e perguntas</p>
+          <h2 class="slide-title-compact">Para muitos termina ali.<br><strong>Para mim, começa ali.</strong></h2>
           <div class="slide-prefall">
-            <img src="assets/svg/circle-rough-01.svg" alt="" aria-hidden="true" style="width: 80%; opacity: 0.5;">
-            <p style="font-family: var(--hand); font-size: 2.2rem; color: var(--rust); transform: rotate(-2deg); line-height: 1.1;">O que muda quando você percebe a pré-queda antes do evento?</p>
+            <img src="assets/svg/circle-rough-01.svg" alt="" aria-hidden="true" width="200" height="200" style="width: 80%; opacity: 0.5;">
+            <p style="font-family: var(--hand); font-size: 2.1rem; color: var(--rust); transform: rotate(-2deg); line-height: 1.1;">O que muda quando você percebe a pré-queda antes do evento?</p>
           </div>
           <p class="slide-hand handwritten question-bottom">Olhar diretamente para uma cadeia de acontecimentos interfere nela?</p>
         </article>
 
         <article class="deck-slide deck-paper" data-slide="8">
-          <p class="slide-eyebrow ink">Do impacto</p>
+          <p class="slide-eyebrow ink">06 / Do impacto</p>
           <h2 class="slide-title-compact">Atenção pode vender.<br><em>Ou pode construir.</em></h2>
           <div class="slide-equation"><span>mensagem</span><b>+</b><span>audiência</span><b>+</b><span>execução</span><b>=</b><strong>impacto</strong></div>
           <p class="slide-hand handwritten corner-right">É construção cultural.<br>É impacto geracional.</p>
-          <img class="slide-bloom" src="assets/bloom.svg" alt="" aria-hidden="true">
+          <img class="slide-bloom" src="assets/bloom.svg" alt="" aria-hidden="true" width="852" height="400">
         </article>
 
         <article class="deck-slide deck-paper" data-slide="9">
-          <p class="slide-eyebrow ink">Uma ideia provisória</p>
+          <p class="slide-eyebrow ink">07 / Uma ideia provisória</p>
           <h2 class="slide-title-compact">Iniciativa<br><em>Divergentes.</em></h2>
           <div class="slide-nodes">
             <span>Profundidade</span><span>Tradução</span><span>Experimentação</span><span>Impacto</span>
           </div>
-          <p class="slide-small statement">Um núcleo pequeno, de alta confiança, para tensionar ideias, traduzir complexidade e transformar visão em experimento.</p>
+          <p class="slide-small statement">Um núcleo de alta confiança para tensionar ideias, traduzir complexidade e transformar visão em experimento.</p>
           <p class="slide-hand handwritten bottom-left">O nome é provisório.<br>A vontade de construir não é.</p>
         </article>
 
@@ -567,14 +560,14 @@
           <h2 class="final-slide-title">Eu quero atravessar.<br><span>E construir a ponte.</span></h2>
           <p class="slide-small light-copy final-copy">Me dê alguns minutos diante de uma mesa. Depois disso, você decide se existe ou não um lugar para mim nessa história.</p>
           <p class="slide-hand handwritten final-hand-slide">Eu sinto como se eu devesse estar aí.</p>
-          <p class="slide-caption">Victor Bruno</p>
+          <p class="slide-caption">Victor Bruno · 2026</p>
         </article>
       </div>
 
       <footer class="presentation-controls">
         <button type="button" id="prevSlide" aria-label="Slide anterior">←</button>
         <div class="presentation-progress"><span id="slideProgress"></span></div>
-        <p><span id="slideCurrent">01</span> / <span id="slideTotal">12</span></p>
+        <p><span id="slideCurrent">01</span> / <span id="slideTotal">11</span></p>
         <button type="button" id="nextSlide" aria-label="Próximo slide">→</button>
       </footer>
     </div>
